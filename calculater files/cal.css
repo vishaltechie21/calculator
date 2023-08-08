@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: sans-serif;
+  background-color: #ecf0f3;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecf0f3;
+}
+
+.calc {
+  box-shadow: 6px 6px 13px #fff, 6px 6px 13px rgb(0, 0, 16);
+  border-radius: 28px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 66px);
+}
+input {
+  grid-column: span 4;
+  height: 68px;
+  width: 258px;
+  box-shadow: inset -6px -6px 13px #fff,
+    inset 6px 6px 13px rgba(0, 0, 16, 0.486);
+  background-color: #ecf0f3;
+  border: none;
+  border-radius: 32px;
+  color: rgb(26, 25, 25);
+  text-align: end;
+  margin: 42px 0px 30px 0px;
+  padding: 40px;
+  font-size: 40px;
+}
+button {
+  box-shadow: inset 6px 6px 13px #fff, 6px 6px 13px rgba(0, 0, 16, 0.445);
+  background-color: #ecf0f3;
+  border: none;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+.equal {
+  width: 120px;
+  border-radius: 20px;
+  background-color: rgba(255, 0, 0, 0.89);
+  box-shadow: none;
+}
+.cs {
+  background-color: black;
+  box-shadow: none;
+  color: red;
+}
+
+/* for theme  */
+/* Light Theme */
+.calc.light-theme {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Dark Theme */
+.calc.dark-theme {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Toggle button style */
+#theme-toggle {
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+#theme-toggle:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-theme-toggle {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#theme-toggle:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
